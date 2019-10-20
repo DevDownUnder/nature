@@ -20,6 +20,7 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 20px;
+  background-color: #fff;
 }
 
 .header {
@@ -43,7 +44,14 @@ body {
 }
 
 .logo {
-  height: 8vh;
+  height: 7vh;
+
+  /* removes lag / hides the back part of the element during animation*/
+  backface-visibility: hidden;
+}
+
+.logo:hover {
+  transform: scale(1.2);
 }
 
 .text-box {
@@ -51,11 +59,16 @@ body {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  /*hides the back part of the element during animation*/
+  backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -81,20 +94,16 @@ body {
   font-weight: 700;
   letter-spacing: 18px;
 
-  animation-name: moveInRight;
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
+  /*shorthand animation syntax */
+  animation: moveInRight 3s ease-out;
 }
 
+/*keyframes are like a function for animations */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(-200px);
   }
-
-  40% {
-  }
-
   80% {
     opacity: 1;
     transform: translateX(10px);
@@ -112,9 +121,6 @@ body {
     transform: translateX(200px);
   }
 
-  40% {
-  }
-
   80% {
     opacity: 1;
     transform: translateX(-20px);
@@ -124,4 +130,34 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 50px;
+  transition: all .2s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.3)
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px  hsla(0, 0%, 0%, 0.3)
+
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn{
+    backface-visibility: hidden;
 }

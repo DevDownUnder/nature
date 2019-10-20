@@ -80,6 +80,7 @@ body {
   animation-name: moveInLeft;
   animation-duration: 3s;
   animation-timing-function: ease-out;
+  animation-delay: 1s;
 }
 
 /* 
@@ -95,7 +96,7 @@ body {
   letter-spacing: 18px;
 
   /*shorthand animation syntax */
-  animation: moveInRight 3s ease-out;
+  animation: moveInRight 3s ease-out 1s;
 }
 
 /*keyframes are like a function for animations */
@@ -132,6 +133,19 @@ body {
   }
 }
 
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*the below class is for the button in general*/
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -139,18 +153,19 @@ body {
   padding: 15px 40px;
   display: inline-block;
   border-radius: 50px;
-  transition: all .2s;
+  transition: all 0.2s;
+  backface-visibility: hidden;
+  position: relative;
 }
 
-.btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.3)
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.3);
 }
 
-.btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 5px 20px  hsla(0, 0%, 0%, 0.3)
-
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.3);
 }
 
 .btn-white {
@@ -158,6 +173,30 @@ body {
   color: #777;
 }
 
-.btn{
-    backface-visibility: hidden;
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.6s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* below - function / transition time / timing function / delay */
+.btn-animated {
+  animation: moveUp 1s ease-out 3s;
+  animation-fill-mode: backwards;
 }

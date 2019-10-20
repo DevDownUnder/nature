@@ -13,13 +13,21 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+/* use 10px for easy coversion to rem for the rest of your css*/
+html {
+  font-size: 10px;
+}
+
+/*Always use rem instead of px, this will imporve responisve design*/
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /*font-size: 16px;*/
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 20px;
+  /*padding: 20px;*/
+  padding: 2rem;
   background-color: #fff;
 }
 
@@ -39,8 +47,8 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
@@ -68,14 +76,14 @@ body {
 
   /*hides the back part of the element during animation*/
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 3s;
@@ -91,9 +99,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 18px;
+  letter-spacing: 1.8rem;
 
   /*shorthand animation syntax */
   animation: moveInRight 3s ease-out 1s;
@@ -103,11 +111,11 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-20rem);
   }
   80% {
     opacity: 1;
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -119,12 +127,12 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(20rem);
   }
 
   80% {
     opacity: 1;
-    transform: translateX(-20px);
+    transform: translateX(-2rem);
   }
 
   100% {
@@ -136,7 +144,7 @@ body {
 @keyframes moveUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(5rem);
   }
 
   100% {
@@ -150,9 +158,9 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 50px;
+  border-radius: 5rem;
   transition: all 0.2s;
   backface-visibility: hidden;
   position: relative;
@@ -160,12 +168,12 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.3);
+  box-shadow: 0 1rem 3rem hsla(0, 0%, 0%, 0.3);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.3);
+  box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.3);
 }
 
 .btn-white {
@@ -178,7 +186,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 5rem;
   position: absolute;
   top: 0;
   left: 0;

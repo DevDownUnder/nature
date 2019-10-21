@@ -7,15 +7,27 @@ Dark green: #28b485
 
 */
 
-* {
+/* the below is used as a global reset - removing unwanted characteristics from browsers */
+
+*,
+*::after,
+*::before
+{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: inherit; is best practice. It will be inherited from the body below*/
+  box-sizing: inherit;
 }
 
-/* use 10px for easy coversion to rem for the rest of your css*/
+/* 
+Root font-size is 16px 
+Rather than use pixels, a percentage is better practice
+10px for easy conversion to rem
+therefore, 10/16 = 62.5% as per the below
+*/
+
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 /*Always use rem instead of px, this will imporve responisve design*/
@@ -29,6 +41,8 @@ body {
   /*padding: 20px;*/
   padding: 2rem;
   background-color: #fff;
+
+  box-sizing: border-box;
 }
 
 .header {
@@ -164,6 +178,7 @@ body {
   transition: all 0.2s;
   backface-visibility: hidden;
   position: relative;
+  font-size: 1.6rem;
 }
 
 .btn:hover {

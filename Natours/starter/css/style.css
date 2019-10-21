@@ -59,24 +59,24 @@ body {
   position: relative;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 7vh;
 
   /* removes lag / hides the back part of the element during animation*/
   backface-visibility: hidden;
 }
 
-.logo:hover {
+.header__logo:hover {
   transform: scale(1.2);
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 45%;
   left: 50%;
@@ -93,7 +93,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -111,7 +111,7 @@ body {
  animation-timing-function: ease-in;
  */
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -191,7 +191,7 @@ body {
   box-shadow: 0 0.5rem 2rem hsla(0, 0%, 0%, 0.3);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -209,7 +209,7 @@ body {
   transition: all 0.6s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -219,7 +219,7 @@ body {
 }
 
 /* below - function / transition time / timing function / delay */
-.btn-animated {
+.btn--animated {
   animation: moveUp 1s ease-out 3s;
   animation-fill-mode: backwards;
 }

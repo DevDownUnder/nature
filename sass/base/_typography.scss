@@ -9,6 +9,7 @@ body {
     /*padding: 20px;*/
     padding: 2rem;
     background-color: $color-white;
+  
   }
 
 .heading-primary {
@@ -18,8 +19,9 @@ body {
     /*hides the back part of the element during animation*/
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
   
-    &-primary--main {
+    &--main {
       display: block;
       font-size: 6rem;
       font-weight: 400;
@@ -29,6 +31,7 @@ body {
       animation-duration: 3s;
       animation-timing-function: ease-out;
       animation-delay: 1s;
+
     }
   
     /* 
@@ -37,7 +40,7 @@ body {
      animation-timing-function: ease-in;
      */
   
-    &-primary--sub {
+    &--sub {
       display: block;
       font-size: 2rem;
       font-weight: 700;
@@ -45,6 +48,8 @@ body {
   
       /*shorthand animation syntax */
       animation: moveInRight 3s ease-out 1s;
+
+    
     }
   }
   

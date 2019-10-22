@@ -1,0 +1,29 @@
+
+/* 
+the below is used as a global reset - removing unwanted characteristics from browsers 
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: inherit; is best practice. It will be inherited from the body below*/
+  box-sizing: inherit;
+}
+
+/* 
+Root font-size is 16px 
+Rather than use pixels, a percentage is better practice
+10px for easy conversion to rem
+therefore, 10/16 = 62.5% as per the below
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+/*Always use rem instead of px, this will imporve responisve design*/
+body {
+  box-sizing: border-box;
+}

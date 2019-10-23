@@ -14,5 +14,14 @@ background-image: linear-gradient(
   rgba($color-primary-dark, 0.8)
 ),
 url(../img/nat-4.jpg);
+background-size:cover;
+//below can be used as well as clip path
+transform: skewY(-7deg);
+margin-top: -10rem;
 
+// all children of the parent selector
+& > * {
+  transform: skewY(7deg);
+
+}
 }

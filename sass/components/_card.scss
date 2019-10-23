@@ -1,9 +1,10 @@
 .card{
     background-color: orangered;
     height: 50rem;
-    transition: all .8s;
+    transition: all 1s;
+    backface-visibility: hidden;
 
     &:hover{
-        transform: rotateX(180deg);
+        transform: rotatey(180deg);
     }
 }

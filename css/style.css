@@ -191,6 +191,14 @@ body {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transform: translate(0px); }
 
+.card {
+  background-color: orangered;
+  height: 50rem;
+  transition: all 1s;
+  backface-visibility: hidden; }
+  .card:hover {
+    transform: rotatey(180deg); }
+
 .composition {
   position: relative; }
   .composition__photo {

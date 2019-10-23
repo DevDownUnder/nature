@@ -13,7 +13,7 @@
 
   //^ allows the selection of everything in the =
   [class^="col-"] {
-    background-color: orange;
+  
     float: left;
 
     &:not(:last-child) {

@@ -84,14 +84,14 @@ body {
     animation-name: moveInLeft;
     animation-duration: 3s;
     animation-timing-function: ease-out;
-    animation-delay: 1s; }
+    animation-delay: .5s; }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.8rem;
     /*shorthand animation syntax */
-    animation: moveInRight 3s ease-out 1s; }
+    animation: moveInRight 3s ease-out .5s; }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -108,8 +108,27 @@ body {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
 .u-center-text {
   text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem; }
 
 /*the below class is for the button in general*/
 .btn {
@@ -163,7 +182,6 @@ body {
     content: "";
     display: table; }
   .row [class^="col-"] {
-    background-color: orange;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
@@ -205,5 +223,6 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 30rem 0;
+  padding-bottom: 80rem;
   margin-top: -20vh; }

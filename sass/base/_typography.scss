@@ -18,6 +18,7 @@ body {
   /*hides the back part of the element during animation*/
   backface-visibility: hidden;
   margin-bottom: 6rem;
+ 
 
   &--main {
     display: block;
@@ -28,7 +29,9 @@ body {
     animation-name: moveInLeft;
     animation-duration: 3s;
     animation-timing-function: ease-out;
-    animation-delay: 1s;
+    animation-delay: .5s;
+
+    // animation-fill-mode: backwards;
   }
 
   /* 
@@ -44,7 +47,7 @@ body {
     letter-spacing: 1.8rem;
 
     /*shorthand animation syntax */
-    animation: moveInRight 3s ease-out 1s;
+    animation: moveInRight 3s ease-out .5s;
   }
 }
 
@@ -71,3 +74,18 @@ body {
     text-shadow: 0.5rem 1rem 2rem rgba( $color-black , .2);
   }
 }
+
+.heading-tertiary{
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph{
+  font-size: 1.6rem;
+
+  &:not(:last-child){
+  margin-bottom: 3rem;}
+}
+  
+

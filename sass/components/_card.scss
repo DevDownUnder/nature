@@ -1,33 +1,43 @@
 .card {
+  // FUNCTIONALITY
   perspective: 100rem;
   // position is used for the cards to be on top of each other
   position: relative;
   height: 50rem;
-
 
   &__side {
     background-color: orangered;
     color: $color-white;
     font-size: 3rem;
     height: 50rem;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
     // position is used for the cards to be on top of each other
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     backface-visibility: hidden;
-
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &--front {
       background-color: $color-white;
-      color: orangered;
+      color: $color-white;
     }
 
     &--back {
-      background-color: orangered;
       color: $color-white;
       transform: rotateY(180deg);
+
+      &-1 {
+        //to have a linear-gradient, it must be set to background-image
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
     }
   }
 
@@ -36,6 +46,31 @@
   }
 
   &:hover &__side--back {
-    transform: rotateY(0);
+    transform: rotateY(360deg);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 25rem;
+    clip-path: polygon( 0 0, 100% 0, 100% 85%, 0 100%);
+
+    // _AMAZING FEATURE!! the below will produce a background image with a gradient overlay 
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
   }
 }

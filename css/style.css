@@ -192,12 +192,31 @@ body {
     transform: translate(0px); }
 
 .card {
-  background-color: orangered;
-  height: 50rem;
-  transition: all 1s;
-  backface-visibility: hidden; }
-  .card:hover {
-    transform: rotatey(180deg); }
+  perspective: 100rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    background-color: orangered;
+    color: #fff;
+    font-size: 3rem;
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden; }
+    .card__side--front {
+      background-color: #fff;
+      color: orangered; }
+    .card__side--back {
+      background-color: orangered;
+      color: #fff;
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
 
 .composition {
   position: relative; }

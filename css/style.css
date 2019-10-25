@@ -170,6 +170,19 @@ body {
   .form__input::-webkit-input-placeholder {
     color: #999; }
 
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
 /*the below class is for the button in general*/
 .btn {
   /* below - function / transition time / timing function / delay */ }

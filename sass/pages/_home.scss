@@ -6,24 +6,23 @@
 }
 
 .section-features {
-padding: 30rem 0;
-padding-bottom: 60rem;
-background-image: linear-gradient(
-  to right bottom,
-  rgba($color-primary-light, 0.8),
-  rgba($color-primary-dark, 0.8)
-),
-url(../img/nat-4.jpg);
-background-size:cover;
-//below can be used as well as clip path
-transform: skewY(-7deg);
-margin-top: -10rem;
+  padding: 30rem 0;
+  padding-bottom: 60rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  //below can be used as well as clip path
+  transform: skewY(-7deg);
+  margin-top: -10rem;
 
-// all children of the parent selector
-& > * {
-  transform: skewY(7deg);
-
-}
+  // all children of the parent selector
+  & > * {
+    transform: skewY(7deg);
+  }
 }
 
 .section-tours {
@@ -32,7 +31,37 @@ margin-top: -10rem;
   margin-top: -20vh;
 }
 
-.section-stories{
+.section-stories {
   padding: 15rem 0;
   position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  background-image: linear-gradient(
+      100deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%,
+    ),
+    url(../img/nat-10.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.2);
+
+  height: 50rem;
+
+  &__form{
+    width: 50%;
+    padding: 6rem;
+  }
+
 }

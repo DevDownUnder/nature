@@ -227,7 +227,7 @@ body {
 /*the below class is for the button in general*/
 .btn {
   /* below - function / transition time / timing function / delay */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -236,7 +236,9 @@ body {
     transition: all 0.2s;
     backface-visibility: hidden;
     position: relative;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3); }
@@ -254,8 +256,6 @@ body {
   .btn--green {
     background-color: #55c57a;
     color: #fff; }
-    .btn--green::after {
-      background-color: #55c57a; }
   .btn::after {
     content: "";
     display: inline-block;

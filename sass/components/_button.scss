@@ -1,6 +1,7 @@
 /*the below class is for the button in general*/
 
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -12,6 +13,12 @@
     backface-visibility: hidden;
     position: relative;
     font-size: $default-font-size;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+
+    
   }
 
   &:hover {
@@ -43,10 +50,6 @@
     ;
     color: $color-white;
 
-    &::after {
-      background-color: $color-primary
-      ;
-    }
   }
 
   &::after {

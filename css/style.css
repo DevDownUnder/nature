@@ -133,6 +133,20 @@ body {
 .u-margin-top-big {
   margin-top: 8rem; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.2;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 /*the below class is for the button in general*/
 .btn {
   /* below - function / transition time / timing function / delay */ }
@@ -343,7 +357,7 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -356,16 +370,38 @@ body {
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem) skewX(12deg); }
+    transform: translateX(-3rem) skewX(12deg) scale(0.8);
+    position: relative; }
   .story__image {
     height: 100%;
-    width: 100%; }
+    transform: translateX(-4rem) scale(1);
+    backface-visibility: hidden; }
   .story__text {
     transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__image {
+    -webkit-filter: blur(3px) brightness(70%);
+    filter: blur(3px) brightness(70%);
+    transform: scale(1.2) translateX(-4rem);
+    backface-visibility: hidden; }
 
 .row {
   max-width: 114rem;
-  background-color: #f7f7f7;
+  background-color: transparent;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
@@ -435,4 +471,4 @@ body {
 
 .section-stories {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  position: relative; }

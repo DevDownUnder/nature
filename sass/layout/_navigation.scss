@@ -1,9 +1,9 @@
 .navigation {
-    &__checkbox{
+    &__checkbox {
         display: none;
     }
 
-    &__button{
+    &__button {
         background-color: $color-white;
         height: 7rem;
         width: 7rem;
@@ -12,29 +12,34 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: .1);
+        text-align: center;
 
     }
 
-    &__background{
+    &__background {
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient($color-primary, $color-primary-dark);
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
-
-        transform: scale(80);
+        //the below can be found at https://easings.net/en#easeInOutCubic
+        transition: all 0.8s //transform: scale(80);
     }
 
     &__nav {
         height: 100vh;
-        width: 100%;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1500;
+        //the below values will hide the navigation 
+        opacity: 0;
+        width: 0;
+        transition: all 0.8s
     }
 
     &__list {
@@ -43,7 +48,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         list-style: none;
-
+        width: 100%;
         text-align: center;
     }
 
@@ -81,4 +86,65 @@
             transform: translateX(1rem);
         }
     }
+
+    //FUNCTIONALITY
+    //  ~ is used to select a sibling
+    &__checkbox:checked~&__background {
+        transform: scale(80);
+    }
+
+    //brings the two values back to being visible
+    &__checkbox:checked~&__nav {
+        opacity: 1;
+        width: 100%;
+
+    }
+
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .3s;
+        }
+
+        &::before {top: -.8rem;}
+        &::after {bottom: -.8rem;}
+    }
+
+    &__button:hover &__icon:before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon:after {
+        bottom: -1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon{
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__button &__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
 }

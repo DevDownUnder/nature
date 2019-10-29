@@ -1,3 +1,19 @@
+/*
+0 - 600PX:      Phone
+600 - 900px:    Tablet potrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  Standard Desktop (Incumbent style design)
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+(Note rem doesn't work on media queries so well. Use em instead)
+*/
 /*keyframes are like a function for animations */
 @keyframes moveInLeft {
   0% {
